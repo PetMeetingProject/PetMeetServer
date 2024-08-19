@@ -1,10 +1,8 @@
 spring:
   profiles:
-    group:
-      local: "local, datasource"
-      dev: "dev, datasource"
-      prod: "prod, datasource"
+    active: ${PROFILES_ACTIVE:local}
     include:
+      - datasource
       - redis
       - storage
       - security
