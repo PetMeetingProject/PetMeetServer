@@ -2,3 +2,63 @@ spring:
   config:
     activate:
       on-profile: "storage"
+
+
+# 공통 설정
+cloud:
+  aws:
+    region:
+      auto: false
+      static: ENC(fu3Cjx3sMeuuDYVYoqrUtRSoC8ix5q90)
+    stack:
+      auto: false
+    s3:
+      endpoint: ${S3_ENDPOINT:https://s3.ap-northeast-2.amazonaws.com}
+
+
+# local 환경
+---
+spring:
+  config:
+    activate:
+      on-profile: "local"
+
+cloud:
+  aws:
+    s3:
+      bucket: ENC(dwBWonrDTkKxYn/b9l9koV6f5rPtW2y4CILc37Pv+Mo=)
+    credentials:
+      access-key: ENC(lvzfzhAUU+GGoiZTbSfuYEfwOdnkiixiwNoFemILcMI=)
+      secret-key: ENC(Y/GcdoUyl3R6PgQ84Q84xj1H044bWXUeC9x8kXtN6EcWy/d7yq+4Saf3YHdVjCDBPHL5psPM5XI=)
+
+
+# dev 환경
+---
+spring:
+  config:
+    activate:
+      on-profile: "dev"
+
+cloud:
+  aws:
+    s3:
+      bucket: ENC(vapMH2o+w2g5YmfukI9WjPG5MVhvh2XrgDO7nAF756E=)
+    credentials:
+      access-key: ENC(IOoiQZ0i6RAYNP2hKi6zfgZVl5otRqFzbg0atuzpY3U=)
+      secret-key: ENC(OgZhNwSX6zAD8KCkMrsKoGUVjA26yU4FkXZWbBkAN4ibQp8nrzzemquwf5eMPgEmmf9WI7Qvfj8=)
+
+
+# prod 환경
+---
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+cloud:
+  aws:
+    s3:
+      bucket: ENC()
+    credentials:
+      access-key: ENC()
+      secret-key: ENC()

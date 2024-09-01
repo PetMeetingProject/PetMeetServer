@@ -2,3 +2,15 @@ spring:
   config:
     activate:
       on-profile: "prod"
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+api:
+  base-url: ENC(dWduYv5CGNTNMTCQ5tAZtg==)
+
+logging:
+  level:
+    org.springframework.orm.jpa: DEBUG
+    org.springframework.transaction: DEBUG

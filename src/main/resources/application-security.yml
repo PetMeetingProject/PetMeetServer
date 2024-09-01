@@ -2,3 +2,41 @@ spring:
   config:
     activate:
       on-profile: "security"
+
+# security OAuth2
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            client-id: ENC(azxmGyvtusGl28y9cwLfjrPwlt3Rd0CffO2iYPjOB3BzK7r+ARQDhFCxGg4Ub6DQ)
+            client_secret: ENC(YfME8cD6lmPqt9NA0eEaZr5pV1Qg7y700yFfzvSDuEestQ7Hp2TDwh9J2rtW+fgw)
+            client-authentication-method: client_secret_post
+            authorization-grant-type: authorization_code
+            redirect-uri: ${MY_APP_URL:http://localhost:8080}/login/oauth2/code/kakao
+            client-name: Kakao
+            provider: kakao
+          apple:
+
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user-info-authentication-method: header
+            user-name-attribute: id
+          apple:
+
+
+# Jasypt
+jasypt:
+  encryptor:
+    password: ${JASYPT_PASSWORD:}
+    algorithm: PBEWithMD5AndDES
+
+
+# JWT
+jwt:
+  secret: ENC(Ox65C5N1tE/UMDi8EQcf4lJU+W86T/VfIHnyblW8rEGk8bN9LGHylgs1cUMZFtVJKMqcXhdJiaUrs9B6Tsw8wkg99kHOPy2ima7dFaloRNdhQDIbzzBrshL3vO15HLu9fl3BFRG+6Ac=)
+  access-token-expiration-millis: ${JWT_ACCESS_EXPIRATION:60000}
+  refresh-token-expiration-millis: ${JWT_REFRESH_EXPIRATION:300000}
