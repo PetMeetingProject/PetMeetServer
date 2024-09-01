@@ -8,6 +8,7 @@ class PetmeetApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println();
     }
 
 }
