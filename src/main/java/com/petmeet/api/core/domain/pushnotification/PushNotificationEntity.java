@@ -28,7 +28,7 @@ public class PushNotificationEntity extends BaseTimeEntity {
 
     private String content;
 
-    private boolean read;
+    private boolean isRead;
 
     @Enumerated(EnumType.STRING)
     private Status status;
