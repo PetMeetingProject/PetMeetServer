@@ -9,8 +9,8 @@ spring:
       client:
         registration:
           kakao:
-            client-id: ENC(azxmGyvtusGl28y9cwLfjrPwlt3Rd0CffO2iYPjOB3BzK7r+ARQDhFCxGg4Ub6DQ)
-            client_secret: ENC(YfME8cD6lmPqt9NA0eEaZr5pV1Qg7y700yFfzvSDuEestQ7Hp2TDwh9J2rtW+fgw)
+            client-id: ${KAKAO_CLIENT_ID:}
+            client_secret: ${KAKAO_CLIENT_SECRET:}
             client-authentication-method: client_secret_post
             authorization-grant-type: authorization_code
             redirect-uri: "{baseUrl}/login/oauth2/code/kakao"
@@ -27,16 +27,8 @@ spring:
             user-name-attribute: id
           #apple:
 
-
-# Jasypt
-jasypt:
-  encryptor:
-    password: ${JASYPT_PASSWORD:}
-    algorithm: PBEWithMD5AndDES
-
-
 # JWT
 jwt:
-  secret: ENC(Ox65C5N1tE/UMDi8EQcf4lJU+W86T/VfIHnyblW8rEGk8bN9LGHylgs1cUMZFtVJKMqcXhdJiaUrs9B6Tsw8wkg99kHOPy2ima7dFaloRNdhQDIbzzBrshL3vO15HLu9fl3BFRG+6Ac=)
+  secret: ${JWT_SECRET_KEY}
   access-token-expiration-millis: ${JWT_ACCESS_EXPIRATION:60000}
   refresh-token-expiration-millis: ${JWT_REFRESH_EXPIRATION:300000}
