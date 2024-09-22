@@ -3,45 +3,8 @@ spring:
     activate:
       on-profile: "datasource"
 
-# 공통 설정
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-
-# local 환경
----
-spring:
-  config:
-    activate:
-      on-profile: "local"
-
-  datasource:
-    url: ENC(x6EMZS27FThnNA3RzKY8bgXhmVHhe1Eo8YawjzedG8EJbndcz9CTomOgoqEdoVNl7s5IclILW3iZCR2SZsB4iA2Eu9OZPEnTKsqjpBx6ECrN3kD5SPX8UKk7vFH9ZuUmWZjsHgJE+reiH6vUwoCJ07wHr/DdpynnkLajMW5s4E2mjTI06jtM6Q3ODPcyN+VSkYb21oQswPNoX6cNJViyY++AbbLJt2K8mwpxi0Y5ajRtC7cCvLD+1HtpxJ/32OmnzWLj2wcL/t0=)
-    username: ENC(uPGOZb6nXltj34iHX3y7tw==)
-    password: ENC(RFF+4WemUqnwSm/qRFZzMoNAJDsE2tJA)
-
-
-# dev 환경
----
-spring:
-  config:
-    activate:
-      on-profile: "dev"
-
-  datasource:
-    url: ENC(eXUQmtDpf4mcKbxkhNuoBSlqLGqTOxIlQ6+OKSVh++u3edARvQPJKgkVGTPdT/PpEEDagco0TnvB354GGpzO/dLKIyKAcQ55rtXJpr7NSaJa756ihl2DEPDYSFOHJOwieig/sv6UsKqZ28aWR82ZEWSwSaV2FZHg481q3VWp/SMrJRooQ/5P7yg8cQ+NR7MCV6YByGEH01yTLex8fB0yCyawTcypmalX)
-    username: ENC(tsTiR6lBSxggaOWULoAbZKvY2DVzmzlS)
-    password: ENC(l1Tyqoa/GrSUlZE7uK1B0QybQYrXrdom)
-
-
-# prod 환경
----
-spring:
-  config:
-    activate:
-      on-profile: "prod"
-
-  datasource:
-    url: ENC()
-    username: ENC()
-    password: ENC()
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${DB_NAME}?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&tinyInt1isBit=false
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
