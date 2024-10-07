@@ -28,8 +28,13 @@ public class BaseApiResponse<D> {
         return new BaseApiResponse<>(responseType.getHttpStatus(), responseType.getMessage(), null);
     }
 
-    // 실패, 에러 응답
+    // 실패, 에러 응답 (커스텀 에러코드를 전달하는 경우)
     public static <D> BaseApiResponse<D> error(BaseErrorCode errorCode) {
         return new BaseApiResponse<>(errorCode.getHttpStatus(), errorCode.getMessage(), null);
+    }
+
+    // 실패, 에러 응답 (직접 HttpStatus, 메시지를 전달하는 경우)
+    public static <D> BaseApiResponse<D> error(HttpStatus httpStatus, String message) {
+        return new BaseApiResponse<>(httpStatus, message, null);
     }
 }
