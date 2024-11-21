@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### 로그 파일 추적 무시
+/logs
